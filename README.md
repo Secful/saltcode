@@ -207,6 +207,20 @@ Found a bug or want to request support for a new tool or policy?
 
 ---
 
+## Looking for More? Salt Code for the Enterprise
+
+Salt Code for the Enterprise is part of the Salt Security Agentic Security platform and is built for organizations that need broader coverage, 
+custom policies, and enterprise-grade identity controls.
+
+- **140+ out-of-the-box policies** covering agentic security, PCI and other regulatory requirements, industry best practices, and more
+- **Custom policies** — bring your corporate security standards into Salt Code and enforce them across every AI coding assistant in your organization
+- **OAuth authentication support** for enterprise identity and access requirements
+- **Usage metrics** — see who your biggest coding agent users are, which policies are being referenced, and more
+
+**[→ Request an enterprise trial at salt.security](https://salt.security)**
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE) for details.
