@@ -6,7 +6,7 @@ salt/code
 
 **Security superpowers for your AI coding assistant.**
 
-Give your AI coding assistant real-time expertise in API security, agentic security, LLM security, and OpenAPI/Swagger compliance — enforced as you code, not after you ship.
+Give your AI coding assistant real-time expertise in API security, agentic security, MCP security, LLM security, and OpenAPI/Swagger compliance. All enforced as you code, not after you ship.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![MCP](https://img.shields.io/badge/transport-MCP%20over%20HTTP-purple.svg)](https://modelcontextprotocol.io)
