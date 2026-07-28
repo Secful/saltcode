@@ -150,7 +150,7 @@ the Salt Code policies?
 | Property | Value |
 |----------|-------|
 | Server URL | `https://salt-code.secured-api.com/mcp` |
-| Transport | Streamable HTTP (MCP spec compliant) |
+| Transport | HTTP / Streamable HTTP (MCP spec compliant) |
 | Authentication | Bearer token (Personal Access Token) |
 | Token validity | 180 days |
 | Protocol | [Model Context Protocol](https://modelcontextprotocol.io) |
