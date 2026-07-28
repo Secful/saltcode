@@ -1,6 +1,6 @@
 ![salt/code](assets/salt-code.png)
 
-**Security superpowers for your AI coding assistant.**
+**Security superpowers for your AI coding assistant - Cursor, Claude, Copilot, Lovable, Kiro, Codex and more**
 
 Give your AI coding assistant real-time expertise in API security, agentic security, MCP security, LLM security, and OpenAPI/Swagger compliance. All enforced as you code, not after you ship.
 
