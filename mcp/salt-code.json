@@ -1,0 +1,15 @@
+{
+  "name": "salt-code-mcp",
+  "description": "Salt Code MCP server — API security, agentic security, LLM security, and OpenAPI/Swagger compliance policies for your AI coding assistant.",
+  "version": "1.0.0",
+  "transport": "http",
+  "url": "https://salt-code.secured-api.com/mcp",
+  "authentication": {
+    "type": "bearer",
+    "header": "Authorization"
+  },
+  "vendor": {
+    "name": "Salt Security",
+    "url": "https://salt.security"
+  }
+}
