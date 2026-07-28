@@ -98,7 +98,7 @@ Any coding assistant that supports an MCP configuration can work with Salt Code.
 | [Bolt](plugins/bolt/) | Builder | HTTP |
 | [Any MCP Client](plugins/generic/) | Universal | HTTP / stdio |
 
-Don't see your tool? [Open an issue](https://github.com/salt-security/salt-code/issues/new?template=tool-request.md) and we'll add it.
+Don't see your tool? [Open an issue](https://github.com/salt-security/salt-code/issues/new?template=issue.md) and we'll add it.
 
 ---
 
