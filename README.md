@@ -1,8 +1,4 @@
-<div align="center">
-
-```
-salt/code
-```
+![salt/code](assets/salt-code.png)
 
 **Security superpowers for your AI coding assistant.**
 
@@ -14,8 +10,6 @@ Give your AI coding assistant real-time expertise in API security, agentic secur
 [![Policies](https://img.shields.io/badge/active%20policies-40+-orange.svg)](#what-salt-code-enforces)
 
 [Get your token](https://salt.security/getsaltcode) · [Setup page](https://salt.security/getsaltcode/setup) · [salt.security](https://salt.security)
-
-</div>
 
 ---
 
