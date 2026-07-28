@@ -15,7 +15,7 @@ Give your AI coding assistant real-time expertise in API security, agentic secur
 
 ## What is Salt Code?
 
-Salt Code is a remote MCP (Model Context Protocol) server that connects to your AI coding assistant and enforces security policies in real time. When you ask your assistant to write an API, design a Swagger spec, or review a codebase, Salt Code steps in — flagging insecure patterns, suggesting fixes, and guiding you toward compliance before your code ever reaches production.
+Salt Code is a remote MCP (Model Context Protocol) server that connects to your AI coding assistant and enforces security policies and guardrails in real time. When you ask your assistant to write an API, create a new MCP tool, design a Swagger spec, or review a codebase, Salt Code steps in — flagging insecure patterns, suggesting fixes, and guiding you toward compliance before your code ever reaches production.
 
 - **40 active policies** across API security, agentic security, LLM security, and OpenAPI/Swagger compliance
 - **Works with 16 AI coding tools** — Cursor, Claude Code, VS Code, Windsurf, Kiro, and more
@@ -73,7 +73,7 @@ For step-by-step instructions for every supported tool, visit the **[interactive
 
 Any coding assistant that supports an MCP configuration can work with Salt Code. Below are coding assistants that have been tested and verified.
 
-| Tool | Type | Transport |
+| Assistant | Type | Transport |
 |------|------|-----------|
 | [Claude Code](plugins/claude-code/) | CLI | HTTP |
 | [Cursor](plugins/cursor/) | Editor | HTTP |
@@ -157,7 +157,7 @@ the Salt Code policies?
 salt-code/
 ├── README.md
 ├── LICENSE
-├── plugins/              # Per-tool config files and install guides
+├── integrations/         # Per-assistant config & optional agent instruction files
 │   ├── claude-code/
 │   ├── cursor/
 │   ├── vscode/
@@ -176,7 +176,7 @@ salt-code/
 │   └── generic/
 ├── mcp/                  # MCP server manifest and schema
 │   └── salt-code.json
-├── policies/             # Policy index and documentation
+├── policies/             # Coding Policy index and documentation
 │   ├── api-security.md
 │   ├── agentic-security.md
 │   ├── llm-security.md

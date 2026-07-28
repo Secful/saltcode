@@ -10,8 +10,6 @@ Sign up at [salt.security/getsaltcode](https://salt.security/getsaltcode). Your 
 
 Visit the [interactive setup page](https://salt.security/getsaltcode/setup), paste your token, and click your AI coding assistant. Every install command will be pre-filled with your token.
 
-Or use the manual config for your tool in the [`/plugins`](../plugins/) directory.
-
 ## Step 3 — Verify the connection
 
 In your AI coding assistant, run:

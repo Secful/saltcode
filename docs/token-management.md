@@ -1,4 +1,4 @@
-# Token Management
+# Salt Code Token Management
 
 ## Your personal access token
 
