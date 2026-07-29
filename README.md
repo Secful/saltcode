@@ -2,7 +2,7 @@
 
 **Security superpowers for your AI coding assistant - Cursor, Claude, Copilot, Lovable, Kiro, Codex and more**
 
-Give your AI coding assistant real-time expertise in API security, agentic security, MCP security, LLM security, and OpenAPI/Swagger compliance. All enforced as you code, not after you ship.
+Salt Code gives your AI coding assistant real-time security expertise. Every prompt. No new workflow. No extra review cycles. Developers ship cleaner code, AppSec teams get real shift left, and DevSecOps teams stop chasing the same findings sprint after sprint.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![MCP](https://img.shields.io/badge/transport-MCP%20over%20HTTP-purple.svg)](https://modelcontextprotocol.io)
@@ -15,12 +15,23 @@ Give your AI coding assistant real-time expertise in API security, agentic secur
 
 ## What is Salt Code?
 
-Salt Code is a remote MCP (Model Context Protocol) server that connects to your AI coding assistant and enforces security policies and guardrails in real time. When you ask your assistant to write an API, create a new MCP tool, design a Swagger spec, or review a codebase, Salt Code steps in — flagging insecure patterns, suggesting fixes, and guiding you toward compliance before your code ever reaches production.
+Salt Code is a remote MCP (Model Context Protocol) server that connects to your AI coding assistant and enforces security policies and guardrails in real time. When you ask your assistant to write an API, create a new MCP tool, design a Swagger spec, or review a codebase, Salt Code steps in flagging insecure patterns, suggesting fixes, and guiding you toward compliance before your code ever reaches production.
 
 - **40 active policies** across API security, agentic security, LLM security, and OpenAPI/Swagger compliance
-- **Works with 16 AI coding tools** — Cursor, Claude Code, VS Code, Windsurf, Kiro, and more
-- **One token, every tool** — configure once, works across your entire stack
-- **Free to use** — no credit card required
+- **Works with 16 AI coding tools** Cursor, Claude Code, VS Code, Windsurf, Kiro, and more
+- **One token, every tool** configure once, works across your entire stack
+- **Free to use** no credit card required
+- **Works for your whole team** one token, one config, works for developers, AppSec, and DevSecOps
+
+---
+
+## Who it's for
+
+**Developers** works inside your existing editor. Same workflow, same tools. Your AI assistant just knows security now. Paste the config once and stop getting flagged in code review for the same patterns.
+
+**AppSec** your policies reach developers at the moment they write code, not after. No new tools for the dev team, no process changes. You get shift left that actually works.
+
+**DevSecOps** when your coding agents know the rules up front, the findings stop showing up in your pipeline. Less noise, faster builds, fewer back-and-forth cycles between security and engineering.
 
 ---
 
@@ -32,7 +43,7 @@ Salt Code is a remote MCP (Model Context Protocol) server that connects to your 
 3. Start coding        →  Salt Code enforces security policies in real time
 ```
 
-That's it. No agents to deploy, no proxies to configure, no infrastructure to manage. Salt Code is a remote MCP server — your coding assistant connects to it over HTTP with a Bearer token.
+That's it. No agents to deploy, no proxies to configure, no infrastructure to manage. Salt Code is a remote MCP server your coding assistant connects to it over HTTP with a Bearer token.
 
 ---
 
@@ -65,7 +76,7 @@ claude mcp add salt-code-mcp \
 
 Replace `<your_token>` with your personal access token from [salt.security/getsaltcode](https://salt.security/getsaltcode).
 
-For step-by-step instructions for every supported tool, visit the **[interactive setup page](https://salt.security/getsaltcode/setup)** — it embeds your token directly into every command.
+For step-by-step instructions for every supported tool, visit the **[interactive setup page](https://salt.security/getsaltcode/setup)** it embeds your token directly into every command.
 
 ---
 
@@ -137,6 +148,12 @@ Can you look at this repository and tell me if it complies with
 the Salt Code policies?
 ```
 
+**Get a violation summary report:**
+```
+Audit this codebase against Salt Code policies and give me
+a summary report of all violations by severity.
+```
+
 ---
 
 ## MCP server details
@@ -195,7 +212,7 @@ Salt Code is free. No credit card required.
 
 **[→ Get your personal access token at salt.security/getsaltcode](https://salt.security/getsaltcode)**
 
-After signing up, your token arrives by email. Paste it into the [interactive setup page](https://salt.security/getsaltcode/setup) and every install command is pre-filled — one copy, one paste, done.
+After signing up, your token arrives by email. Paste it into the [interactive setup page](https://salt.security/getsaltcode/setup) and every install command is pre-filled one copy, one paste, done.
 
 ---
 
@@ -209,13 +226,12 @@ Found a bug or want to request support for a new tool or policy?
 
 ## Looking for More? Salt Code for the Enterprise
 
-Salt Code for the Enterprise is part of the Salt Security Agentic Security platform and is built for organizations that need broader coverage, 
-custom policies, and enterprise-grade identity controls.
+Salt Code for the Enterprise is part of the Salt Security Agentic Security platform. Built for security and engineering teams that need broader policy coverage, custom rules, and enterprise identity controls. A good fit for AppSec and DevSecOps teams rolling this out across a larger engineering org.
 
 - **140+ out-of-the-box policies** covering agentic security, PCI and other regulatory requirements, industry best practices, and more
-- **Custom policies** — bring your corporate security standards into Salt Code and enforce them across every AI coding assistant in your organization
+- **Custom policies** bring your corporate security standards into Salt Code and enforce them across every AI coding assistant in your organization
 - **OAuth authentication support** for enterprise identity and access requirements
-- **Usage metrics** — see who your biggest coding agent users are, which policies are being referenced, and more
+- **Usage metrics** see who your biggest coding agent users are, which policies are being referenced, and more
 
 **[→ Request an enterprise trial at salt.security](https://salt.security)**
 
@@ -223,7 +239,7 @@ custom policies, and enterprise-grade identity controls.
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+MIT see [LICENSE](LICENSE) for details.
 
 ---
 
