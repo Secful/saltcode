@@ -1,4 +1,4 @@
-salt/code
+![salt/code](assets/salt-code.png)
 
 **Security superpowers for your AI coding assistant - Cursor, Claude, Copilot, Lovable, Kiro, Codex and more**
 
