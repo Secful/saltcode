@@ -1,17 +1,19 @@
-![salt/code](assets/salt-code.png)
+salt/code
 
 **Security superpowers for your AI coding assistant - Cursor, Claude, Copilot, Lovable, Kiro, Codex and more**
 
 Salt Code gives your AI coding assistant real-time security expertise. Every prompt. No new workflow. No extra review cycles. Developers ship cleaner code, AppSec teams get real shift left, and DevSecOps teams stop chasing the same findings sprint after sprint.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![MCP](https://img.shields.io/badge/transport-MCP%20over%20HTTP-purple.svg)](https://modelcontextprotocol.io)
-[![Coding Assistants](https://img.shields.io/badge/Tested%20Coding%20Assistants-16-brightgreen.svg)](#supported-coding-assistants)
-[![Policies](https://img.shields.io/badge/active%20policies-40+-orange.svg)](#what-salt-code-enforces)
+[License](LICENSE)
+[MCP](https://modelcontextprotocol.io)
+[Coding Assistants](#supported-coding-assistants)
+[Policies](#what-salt-code-enforces)
 
 [Get your token](https://salt.security/getsaltcode) · [Setup page](https://salt.security/getsaltcode/setup) · [salt.security](https://salt.security)
 
 ---
+
+
 
 ## What is Salt Code?
 
@@ -25,6 +27,8 @@ Salt Code is a remote MCP (Model Context Protocol) server that connects to your 
 
 ---
 
+
+
 ## Who it's for
 
 **Developers** works inside your existing editor. Same workflow, same tools. Your AI assistant just knows security now. Paste the config once and stop getting flagged in code review for the same patterns.
@@ -34,6 +38,8 @@ Salt Code is a remote MCP (Model Context Protocol) server that connects to your 
 **DevSecOps** when your coding agents know the rules up front, the findings stop showing up in your pipeline. Less noise, faster builds, fewer back-and-forth cycles between security and engineering.
 
 ---
+
+
 
 ## How it works
 
@@ -46,6 +52,8 @@ Salt Code is a remote MCP (Model Context Protocol) server that connects to your 
 That's it. No agents to deploy, no proxies to configure, no infrastructure to manage. Salt Code is a remote MCP server your coding assistant connects to it over HTTP with a Bearer token.
 
 ---
+
+
 
 ## Quickstart
 
@@ -80,75 +88,92 @@ For step-by-step instructions for every supported tool, visit the **[interactive
 
 ---
 
+
+
 ## Supported Coding Assistants
 
 Any coding assistant that supports an MCP configuration can work with Salt Code. Below are coding assistants that have been tested and verified.
 
-| Assistant | Type | Transport |
-|------|------|-----------|
-| [Claude Code](plugins/claude-code/) | CLI | HTTP |
-| [Cursor](plugins/cursor/) | Editor | HTTP |
-| [VS Code + GitHub Copilot](plugins/vscode/) | Editor | HTTP |
-| [GitHub Copilot CLI](plugins/copilot-cli/) | CLI | HTTP |
-| [Windsurf](plugins/windsurf/) | Editor | HTTP |
-| [Kiro](plugins/kiro/) | IDE | HTTP |
-| [Codex](plugins/codex/) | CLI | HTTP |
-| [Gemini CLI](plugins/gemini-cli/) | CLI | HTTP |
-| [Antigravity](plugins/antigravity/) | IDE | HTTP |
-| [OpenCode](plugins/opencode/) | CLI | HTTP |
-| [JetBrains AI Assistant](plugins/jetbrains/) | IDE | HTTP (via mcp-remote) |
-| [Grok](plugins/grok/) | CLI | HTTP |
-| [Lovable](plugins/lovable/) | Builder | HTTP |
-| [Cline](plugins/cline/) | Extension | Streamable HTTP |
-| [Bolt](plugins/bolt/) | Builder | HTTP |
-| [Any MCP Client](plugins/generic/) | Universal | HTTP / stdio |
+
+| Assistant                                         | Type      | Transport             |
+| ------------------------------------------------- | --------- | --------------------- |
+| [Claude Code](integrations/claude-code/)          | CLI       | HTTP                  |
+| [Cursor](integrations/cursor/)                    | Editor    | HTTP                  |
+| [VS Code + GitHub Copilot](integrations/vscode/)  | Editor    | HTTP                  |
+| [GitHub Copilot CLI](integrations/copilot-cli/)   | CLI       | HTTP                  |
+| [Windsurf](integrations/windsurf/)                | Editor    | HTTP                  |
+| [Kiro](integrations/kiro/)                        | IDE       | HTTP                  |
+| [Codex](integrations/codex/)                      | CLI       | HTTP                  |
+| [Gemini CLI](integrations/gemini-cli/)            | CLI       | HTTP                  |
+| [Antigravity](integrations/antigravity/)          | IDE       | HTTP                  |
+| [OpenCode](integrations/opencode/)                | CLI       | HTTP                  |
+| [JetBrains AI Assistant](integrations/jetbrains/) | IDE       | HTTP (via mcp-remote) |
+| [Grok](integrations/grok/)                        | CLI       | HTTP                  |
+| [Lovable](integrations/lovable/)                  | Builder   | HTTP                  |
+| [Cline](integrations/cline/)                      | Extension | Streamable HTTP       |
+| [Bolt](integrations/bolt/)                        | Builder   | HTTP                  |
+| [Any MCP Client](integrations/generic/)           | Universal | HTTP / stdio          |
+
 
 Don't see your tool? [Open an issue](https://github.com/salt-security/salt-code/issues/new?template=issue.md) and we'll add it.
 
 ---
+
+
 
 ## What Salt Code enforces
 
 Salt Code ships with 40 policies across four security domains:
 
 ### API Security (OWASP API Top 10)
+
 Broken object level authorization, broken authentication, excessive data exposure, lack of rate limiting, broken function level authorization, mass assignment, security misconfiguration, injection, improper asset management, and more.
 
 ### Agentic Security (MCP)
+
 Prompt injection via MCP tools, tool poisoning, excessive tool permissions, unsafe agent-to-agent communication, unvalidated tool outputs, and insecure MCP server configurations.
 
 ### LLM Security
+
 Indirect prompt injection, insecure output handling, training data poisoning vectors in generated code, model denial of service patterns, and supply chain risks in AI-generated dependencies.
 
 ### OpenAPI / Swagger Compliance
+
 Missing authentication schemes, undocumented endpoints, improper response schemas, insecure parameter handling (query string auth, PII in URLs), missing rate limit headers, and spec-to-implementation drift.
 
 ---
+
+
 
 ## Try these prompts
 
 Once connected, try these in your AI assistant to see Salt Code in action:
 
 **Explore active policies:**
+
 ```
 What security policies and guidelines are active?
 ```
 
 **Watch Salt Code catch a violation:**
+
 ```
 Design me a Swagger spec for a delete-user API that authenticates 
 via a key in the query string and passes the deleted user ID in 
 the query string as well.
 ```
+
 > Salt Code will flag query string authentication (OWASP API2) and PII in the URL before you write a single line of implementation code.
 
 **Audit your codebase:**
+
 ```
 Can you look at this repository and tell me if it complies with 
 the Salt Code policies?
 ```
 
 **Get a violation summary report:**
+
 ```
 Audit this codebase against Salt Code policies and give me
 a summary report of all violations by severity.
@@ -156,17 +181,23 @@ a summary report of all violations by severity.
 
 ---
 
+
+
 ## MCP server details
 
-| Property | Value |
-|----------|-------|
-| Server URL | `https://salt-code.secured-api.com/mcp` |
-| Transport | HTTP / Streamable HTTP (MCP spec compliant) |
-| Authentication | Bearer token (Personal Access Token) |
-| Token validity | 180 days |
-| Protocol | [Model Context Protocol](https://modelcontextprotocol.io) |
+
+| Property       | Value                                                     |
+| -------------- | --------------------------------------------------------- |
+| Server URL     | `https://salt-code.secured-api.com/mcp`                   |
+| Transport      | HTTP / Streamable HTTP (MCP spec compliant)               |
+| Authentication | Bearer token (Personal Access Token)                      |
+| Token validity | 180 days                                                  |
+| Protocol       | [Model Context Protocol](https://modelcontextprotocol.io) |
+
 
 ---
+
+
 
 ## Repository structure
 
@@ -175,8 +206,8 @@ salt-code/
 ├── README.md
 ├── LICENSE
 ├── integrations/         # Per-assistant config & optional agent instruction files
-│   ├── claude-code/
-│   ├── cursor/
+│   ├── claude-code/          # config, instructions/, plugins/
+│   ├── cursor/               # config, instructions/, plugins/
 │   ├── vscode/
 │   ├── copilot-cli/
 │   ├── windsurf/
@@ -190,7 +221,7 @@ salt-code/
 │   ├── lovable/
 │   ├── cline/
 │   ├── bolt/
-│   └── generic/
+│   └── generic/              # config, instructions/, plugins/
 ├── mcp/                  # MCP server manifest and schema
 │   └── salt-code.json
 ├── policies/             # Coding Policy index and documentation
@@ -206,6 +237,8 @@ salt-code/
 
 ---
 
+
+
 ## Get your token
 
 Salt Code is free. No credit card required.
@@ -216,6 +249,8 @@ After signing up, your token arrives by email. Paste it into the [interactive se
 
 ---
 
+
+
 ## Contributing
 
 Found a bug or want to request support for a new tool or policy?
@@ -223,6 +258,8 @@ Found a bug or want to request support for a new tool or policy?
 [Open an issue](https://github.com/salt-security/salt-code/issues/new) and let us know.
 
 ---
+
+
 
 ## Looking for More? Salt Code for the Enterprise
 
@@ -237,16 +274,17 @@ Salt Code for the Enterprise is part of the Salt Security Agentic Security platf
 
 ---
 
+
+
 ## License
 
 MIT see [LICENSE](LICENSE) for details.
 
 ---
 
-<div align="center">
+
 
 Built by [Salt Security](https://salt.security) · The leader in Agentic AI Connectivity Security
 
 [salt.security](https://salt.security) · [LinkedIn](https://www.linkedin.com/company/saltsecurity/) · [Twitter / X](https://x.com/SaltSecurity)
 
-</div>
