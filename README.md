@@ -2,7 +2,7 @@ salt/code
 
 **Security superpowers for your AI coding assistant - Cursor, Claude, Copilot, Lovable, Kiro, Codex and more**
 
-Salt Code gives your AI coding assistant real-time security expertise. Every prompt. No new workflow. No extra review cycles. Developers ship cleaner code, AppSec teams get real shift left, and DevSecOps teams stop chasing the same findings sprint after sprint.
+Salt Code gives your AI coding assistant real-time security expertise and coding guardrails. Every prompt. No new workflow. No extra review cycles. Developers ship cleaner code. AppSec gets real shift left. DevSecOps enforces at the PR gate and sees less noise everywhere else.
 
 [License](LICENSE)
 [MCP](https://modelcontextprotocol.io)
@@ -35,7 +35,7 @@ Salt Code is a remote MCP (Model Context Protocol) server that connects to your 
 
 **AppSec** your policies reach developers at the moment they write code, not after. No new tools for the dev team, no process changes. You get shift left that actually works.
 
-**DevSecOps** when your coding agents know the rules up front, the findings stop showing up in your pipeline. Less noise, faster builds, fewer back-and-forth cycles between security and engineering.
+**DevSecOps** connect Salt Code to your code review agents and every PR gets checked against your security policies before it merges. Issues caught at the developer desktop never reach the pipeline. Issues that do get caught at the PR gate. Less scanner noise, faster builds, fewer cycles between security and engineering.
 
 ---
 
@@ -205,9 +205,9 @@ a summary report of all violations by severity.
 salt-code/
 ├── README.md
 ├── LICENSE
-├── integrations/         # Per-assistant config & optional agent instruction files
-│   ├── claude-code/          # config, instructions/, plugins/
-│   ├── cursor/               # config, instructions/, plugins/
+├── integrations/         # configs, agent instructinos, plugins where applicable
+│   ├── claude-code/
+│   ├── cursor/
 │   ├── vscode/
 │   ├── copilot-cli/
 │   ├── windsurf/
@@ -221,10 +221,10 @@ salt-code/
 │   ├── lovable/
 │   ├── cline/
 │   ├── bolt/
-│   └── generic/              # config, instructions/, plugins/
+│   └── generic/             
 ├── mcp/                  # MCP server manifest and schema
 │   └── salt-code.json
-├── policies/             # Coding Policy index and documentation
+├── policies/             # Coding Policies/Guardrails index and documentation
 │   ├── api-security.md
 │   ├── agentic-security.md
 │   ├── llm-security.md
