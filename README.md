@@ -1,1 +1,290 @@
-# saltcode
+![salt/code](assets/salt-code.png)
+
+**Security superpowers for your AI coding assistant - Cursor, Claude, Copilot, Lovable, Kiro, Codex and more**
+
+Salt Code gives your AI coding assistant real-time security expertise and coding guardrails. Every prompt. No new workflow. No extra review cycles. Developers ship cleaner code. AppSec gets real shift left. DevSecOps enforces at the PR gate and sees less noise everywhere else.
+
+[License](LICENSE)
+[MCP](https://modelcontextprotocol.io)
+[Coding Assistants](#supported-coding-assistants)
+[Policies](#what-salt-code-enforces)
+
+[Get your token](https://salt.security/getsaltcode) · [Setup page](https://salt.security/getsaltcode/setup) · [salt.security](https://salt.security)
+
+---
+
+
+
+## What is Salt Code?
+
+Salt Code is a remote MCP (Model Context Protocol) server that connects to your AI coding assistant and enforces security policies and guardrails in real time. When you ask your assistant to write an API, create a new MCP tool, design a Swagger spec, or review a codebase, Salt Code steps in flagging insecure patterns, suggesting fixes, and guiding you toward compliance before your code ever reaches production.
+
+- **40 active policies** across API security, agentic security, LLM security, and OpenAPI/Swagger compliance
+- **Works with 16 AI coding tools** Cursor, Claude Code, VS Code, Windsurf, Kiro, and more
+- **One token, every tool** configure once, works across your entire stack
+- **Free to use** no credit card required
+- **Works for your whole team** one token, one config, works for developers, AppSec, and DevSecOps
+
+---
+
+
+
+## Who it's for
+
+**Developers** works inside your existing editor. Same workflow, same tools. Your AI assistant just knows security now. Paste the config once and stop getting flagged in code review for the same patterns.
+
+**AppSec** your policies reach developers at the moment they write code, not after. No new tools for the dev team, no process changes. You get shift left that actually works.
+
+**DevSecOps** connect Salt Code to your code review agents and every PR gets checked against your security policies before it merges. Issues caught at the developer desktop never reach the pipeline. Issues that do get caught at the PR gate. Less scanner noise, faster builds, fewer cycles between security and engineering.
+
+---
+
+
+
+## How it works
+
+```
+1. Get your token      →  salt.security/getsaltcode
+2. Connect your tool   →  paste one config block (or one command)
+3. Start coding        →  Salt Code enforces security policies in real time
+```
+
+That's it. No agents to deploy, no proxies to configure, no infrastructure to manage. Salt Code is a remote MCP server your coding assistant connects to it over HTTP with a Bearer token.
+
+---
+
+
+
+## Quickstart
+
+**Claude Code (one command):**
+
+```bash
+claude mcp add salt-code-mcp \
+  https://salt-code.secured-api.com/mcp \
+  --transport http \
+  --header "Authorization: Bearer <your_token>"
+```
+
+**Cursor / VS Code / most editors (config block):**
+
+```json
+{
+  "mcpServers": {
+    "salt-code-mcp": {
+      "type": "http",
+      "url": "https://salt-code.secured-api.com/mcp",
+      "headers": {
+        "Authorization": "Bearer <your_token>"
+      }
+    }
+  }
+}
+```
+
+Replace `<your_token>` with your personal access token from [salt.security/getsaltcode](https://salt.security/getsaltcode).
+
+For step-by-step instructions for every supported tool, visit the **[interactive setup page](https://salt.security/getsaltcode/setup)** it embeds your token directly into every command.
+
+---
+
+
+
+## Supported Coding Assistants
+
+Any coding assistant that supports an MCP configuration can work with Salt Code. Below are coding assistants that have been tested and verified.
+
+
+| Assistant                                         | Type      | Transport             |
+| ------------------------------------------------- | --------- | --------------------- |
+| [Claude Code](integrations/claude-code/)          | CLI       | HTTP                  |
+| [Cursor](integrations/cursor/)                    | Editor    | HTTP                  |
+| [VS Code + GitHub Copilot](integrations/vscode/)  | Editor    | HTTP                  |
+| [GitHub Copilot CLI](integrations/copilot-cli/)   | CLI       | HTTP                  |
+| [Windsurf](integrations/windsurf/)                | Editor    | HTTP                  |
+| [Kiro](integrations/kiro/)                        | IDE       | HTTP                  |
+| [Codex](integrations/codex/)                      | CLI       | HTTP                  |
+| [Gemini CLI](integrations/gemini-cli/)            | CLI       | HTTP                  |
+| [Antigravity](integrations/antigravity/)          | IDE       | HTTP                  |
+| [OpenCode](integrations/opencode/)                | CLI       | HTTP                  |
+| [JetBrains AI Assistant](integrations/jetbrains/) | IDE       | HTTP (via mcp-remote) |
+| [Grok](integrations/grok/)                        | CLI       | HTTP                  |
+| [Lovable](integrations/lovable/)                  | Builder   | HTTP                  |
+| [Cline](integrations/cline/)                      | Extension | Streamable HTTP       |
+| [Bolt](integrations/bolt/)                        | Builder   | HTTP                  |
+| [Any MCP Client](integrations/generic/)           | Universal | HTTP / stdio          |
+
+
+Don't see your tool? [Open an issue](https://github.com/salt-security/salt-code/issues/new?template=issue.md) and we'll add it.
+
+---
+
+
+
+## What Salt Code enforces
+
+Salt Code ships with 40 policies across four security domains:
+
+### API Security (OWASP API Top 10)
+
+Broken object level authorization, broken authentication, excessive data exposure, lack of rate limiting, broken function level authorization, mass assignment, security misconfiguration, injection, improper asset management, and more.
+
+### Agentic Security (MCP)
+
+Prompt injection via MCP tools, tool poisoning, excessive tool permissions, unsafe agent-to-agent communication, unvalidated tool outputs, and insecure MCP server configurations.
+
+### LLM Security
+
+Indirect prompt injection, insecure output handling, training data poisoning vectors in generated code, model denial of service patterns, and supply chain risks in AI-generated dependencies.
+
+### OpenAPI / Swagger Compliance
+
+Missing authentication schemes, undocumented endpoints, improper response schemas, insecure parameter handling (query string auth, PII in URLs), missing rate limit headers, and spec-to-implementation drift.
+
+---
+
+
+
+## Try these prompts
+
+Once connected, try these in your AI assistant to see Salt Code in action:
+
+**Explore active policies:**
+
+```
+What security policies and guidelines are active?
+```
+
+**Watch Salt Code catch a violation:**
+
+```
+Design me a Swagger spec for a delete-user API that authenticates 
+via a key in the query string and passes the deleted user ID in 
+the query string as well.
+```
+
+> Salt Code will flag query string authentication (OWASP API2) and PII in the URL before you write a single line of implementation code.
+
+**Audit your codebase:**
+
+```
+Can you look at this repository and tell me if it complies with 
+the Salt Code policies?
+```
+
+**Get a violation summary report:**
+
+```
+Audit this codebase against Salt Code policies and give me
+a summary report of all violations by severity.
+```
+
+---
+
+
+
+## MCP server details
+
+
+| Property       | Value                                                     |
+| -------------- | --------------------------------------------------------- |
+| Server URL     | `https://salt-code.secured-api.com/mcp`                   |
+| Transport      | HTTP / Streamable HTTP (MCP spec compliant)               |
+| Authentication | Bearer token (Personal Access Token)                      |
+| Token validity | 180 days                                                  |
+| Protocol       | [Model Context Protocol](https://modelcontextprotocol.io) |
+
+
+---
+
+
+
+## Repository structure
+
+```
+salt-code/
+├── README.md
+├── LICENSE
+├── integrations/         # configs, agent instructinos, plugins where applicable
+│   ├── claude-code/
+│   ├── cursor/
+│   ├── vscode/
+│   ├── copilot-cli/
+│   ├── windsurf/
+│   ├── kiro/
+│   ├── codex/
+│   ├── gemini-cli/
+│   ├── antigravity/
+│   ├── opencode/
+│   ├── jetbrains/
+│   ├── grok/
+│   ├── lovable/
+│   ├── cline/
+│   ├── bolt/
+│   └── generic/             
+├── mcp/                  # MCP server manifest and schema
+│   └── salt-code.json
+├── policies/             # Coding Policies/Guardrails index and documentation
+│   ├── api-security.md
+│   ├── agentic-security.md
+│   ├── llm-security.md
+│   └── openapi-compliance.md
+└── docs/                 # Additional documentation
+    ├── quickstart.md
+    ├── token-management.md
+    └── troubleshooting.md
+```
+
+---
+
+
+
+## Get your token
+
+Salt Code is free. No credit card required.
+
+**[→ Get your personal access token at salt.security/getsaltcode](https://salt.security/getsaltcode)**
+
+After signing up, your token arrives by email. Paste it into the [interactive setup page](https://salt.security/getsaltcode/setup) and every install command is pre-filled one copy, one paste, done.
+
+---
+
+
+
+## Contributing
+
+Found a bug or want to request support for a new tool or policy?
+
+[Open an issue](https://github.com/salt-security/salt-code/issues/new) and let us know.
+
+---
+
+
+
+## Looking for More? Salt Code for the Enterprise
+
+Salt Code for the Enterprise is part of the Salt Security Agentic Security platform. Built for security and engineering teams that need broader policy coverage, custom rules, and enterprise identity controls. A good fit for AppSec and DevSecOps teams rolling this out across a larger engineering org.
+
+- **140+ out-of-the-box policies** covering agentic security, PCI and other regulatory requirements, industry best practices, and more
+- **Custom policies** bring your corporate security standards into Salt Code and enforce them across every AI coding assistant in your organization
+- **OAuth authentication support** for enterprise identity and access requirements
+- **Usage metrics** see who your biggest coding agent users are, which policies are being referenced, and more
+
+**[→ Request an enterprise trial at salt.security](https://salt.security)**
+
+---
+
+
+
+## License
+
+MIT see [LICENSE](LICENSE) for details.
+
+---
+
+
+
+Built by [Salt Security](https://salt.security) · The leader in Agentic AI Connectivity Security
+
+[salt.security](https://salt.security) · [LinkedIn](https://www.linkedin.com/company/saltsecurity/) · [Twitter / X](https://x.com/SaltSecurity)
+
