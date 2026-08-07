@@ -115,7 +115,7 @@ Any coding assistant that supports an MCP configuration can work with Salt Code.
 | [Any MCP Client](integrations/generic/)           | Universal | HTTP / stdio          |
 
 
-Don't see your tool? [Open an issue](https://github.com/salt-security/salt-code/issues/new?template=issue.md) and we'll add it.
+Don't see your tool? [Open an issue](https://github.com/Secful/saltcode/issues) and we'll add it.
 
 ---
 
@@ -255,7 +255,7 @@ After signing up, your token arrives by email. Paste it into the [interactive se
 
 Found a bug or want to request support for a new tool or policy?
 
-[Open an issue](https://github.com/salt-security/salt-code/issues/new) and let us know.
+[Open an issue](https://github.com/Secful/saltcode/issues) and let us know.
 
 ---
 
