@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "salt-code-mcp": {
+      "url": "https://salt-code.secured-api.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SALT_CODE_TOKEN}"
+      }
+    }
+  }
+}

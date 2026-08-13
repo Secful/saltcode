@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "salt-code-mcp": {
+      "type": "http",
+      "url": "https://salt-code.secured-api.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SALT_CODE_TOKEN}"
+      }
+    }
+  }
+}

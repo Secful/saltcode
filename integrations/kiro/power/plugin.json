@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "salt-code",
+  "version": "1.0.0",
+  "description": "Salt Code — API security, agentic security, MCP security, LLM security, and OpenAPI/Swagger compliance policies for your AI coding assistant.",
+  "author": {
+    "name": "Salt Security",
+    "url": "https://salt.security"
+  },
+  "homepage": "https://salt.security/getsaltcode",
+  "repository": "https://github.com/Secful/saltcode",
+  "license": "MIT",
+  "keywords": [
+    "salt code",
+    "salt security",
+    "api security",
+    "owasp",
+    "openapi",
+    "swagger",
+    "mcp security",
+    "llm security",
+    "agentic security",
+    "coding assistant security",
+    "security policies"
+  ]
+}

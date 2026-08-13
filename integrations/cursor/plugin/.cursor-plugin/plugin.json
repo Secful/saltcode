@@ -1,0 +1,35 @@
+{
+  "name": "salt-code",
+  "version": "1.0.0",
+  "description": "Salt Code — API security, agentic security, MCP security, LLM security, and OpenAPI/Swagger compliance policies for your AI coding assistant.",
+  "author": {
+    "name": "Salt Security"
+  },
+  "homepage": "https://salt.security/getsaltcode",
+  "repository": "https://github.com/Secful/saltcode",
+  "license": "MIT",
+  "keywords": [
+    "salt code",
+    "salt security",
+    "api security",
+    "owasp",
+    "openapi",
+    "swagger",
+    "mcp security",
+    "llm security",
+    "agentic security",
+    "coding assistant security",
+    "security policies"
+  ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "SALT_CODE_TOKEN": {
+        "type": "string",
+        "title": "Salt Code token",
+        "description": "Personal access token from https://salt.security/getsaltcode"
+      }
+    },
+    "required": ["SALT_CODE_TOKEN"]
+  }
+}
